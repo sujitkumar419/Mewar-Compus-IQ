@@ -1,0 +1,11 @@
+﻿Flask
+pdfplumber
+docx2txt
+python-pptx
+python-dotenv
+google-genai
+psycopg[binary]
+pypdf
+python-docx
+Authlib
+PyMuPDF
