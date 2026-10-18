@@ -1,275 +1,143 @@
-# Mewar Campus IQ 🎓🤖
+🎓 Mewar Campus IQ — AI-Powered Smart Learning
 
-> **An AI-powered study companion for students** --- upload study
-> material, ask questions about your learning content, practice quizzes,
-> and keep academic resources in one place.
+«An AI-powered study companion designed to help students interact with their study materials, ask questions, and practice quizzes in one place.»
 
-🌐 **Live Demo:** https://mewar-campus-iq.onrender.com\
-📦 **GitHub Repository:**
-https://github.com/MDSalman22415/mewar-campus-iq
+🌐 Live Demo: https://mewar-campus-iq.onrender.com
 
-------------------------------------------------------------------------
+📦 GitHub Repository: https://github.com/MDSalman22415/mewar-campus-iq
 
-## Table of Contents
+---
 
--   [Overview](#overview)
--   [Problem Statement](#problem-statement)
--   [Our Solution](#our-solution)
--   [Features](#features)
--   [User Workflow](#user-workflow)
--   [Technology Stack](#technology-stack)
--   [Architecture](#architecture)
--   [Project Structure](#project-structure)
--   [How It Works](#how-it-works)
--   [Local Setup](#local-setup)
--   [Environment Variables](#environment-variables)
--   [Run the Application](#run-the-application)
--   [API Endpoints](#api-endpoints)
--   [Database](#database)
--   [Deployment](#deployment)
--   [Testing and Troubleshooting](#testing-and-troubleshooting)
--   [Security Notes](#security-notes)
--   [Limitations](#limitations)
--   [Future Improvements](#future-improvements)
--   [Contributing](#contributing)
--   [Team and Credits](#team-and-credits)
--   [License](#license)
+🚀 About the Project
 
-------------------------------------------------------------------------
+Mewar Campus IQ is an AI-powered educational web application developed around the theme “The Smart Campus” for MU Hackathon 2026 at Mewar University.
 
-## Overview
+The project aims to make learning more interactive by bringing study-material uploads, AI-assisted question answering, and quiz practice together in one platform.
 
-**Mewar Campus IQ** is a web-based AI study companion designed to help
-students interact with their academic resources more effectively.
-Instead of only storing notes and PDFs, the project brings together
-study-material upload, AI-assisted learning, and quiz practice in one
-web application.
+As a member of the Mewar University student community and Founder of Mewar Innovators Hub, I believe technology can help students access learning resources more effectively and turn ideas into practical solutions.
 
-The project was built as a Smart Campus / AI-for-education prototype and
-deployed publicly so users can try the application online.
+🎯 Problem Statement
 
-**Live application:** https://mewar-campus-iq.onrender.com
+Students often manage notes, PDFs, assignments, and revision resources across different platforms. Finding relevant information and understanding difficult concepts can take time.
 
-> **Project status:** Deployed prototype. Availability and AI response
-> times may depend on the hosting platform, database configuration, and
-> the availability/limits of the configured AI provider.
+Mewar Campus IQ aims to simplify this learning process through a centralized, student-focused platform.
 
-## Problem Statement
+💡 Key Features
 
-Students often keep notes, previous-year questions, assignments, and
-other learning resources in separate folders or platforms. Finding the
-right material, understanding a difficult topic, and revising
-efficiently can take time.
+- AI-Assisted Study Chat — Ask questions and receive AI-generated explanations.
+- PDF Study Material Upload — Upload supported PDFs for text extraction and study workflows.
+- Quiz Practice — Access quiz-related features and submit answers.
+- Student Authentication — Login and registration interfaces.
+- Web-Based Interface — Access the application through a browser.
+- Cloud Deployment — A publicly hosted prototype available online.
 
-Mewar Campus IQ aims to make the study workflow more convenient by
-providing a single place to:
+Feature availability depends on the current deployed implementation and service configuration.
 
--   Access the application's study features.
--   Upload supported PDF study material.
--   Ask AI-assisted questions.
--   Practice quiz questions and submit answers.
--   Explore a foundation that can be extended into a broader campus
-    learning platform.
+🛠️ Technology Stack
 
-## Our Solution
+- Backend: Python, Flask
+- Frontend: HTML, CSS, JavaScript
+- AI Integration: Google Gemini API
+- PDF Processing: PyMuPDF and/or pypdf
+- Database: PostgreSQL via Supabase
+- Deployment: Render
+- Containerization: Docker
+- Version Control: Git and GitHub
 
-Mewar Campus IQ combines a Flask web application with a browser-based
-interface, a database connection, PDF text extraction, and an AI-powered
-question-answering flow. The goal is to make learning resources more
-interactive and to provide a practical foundation for future
-student-focused features.
+🔄 How It Works
 
-## Features
+1. Open the web application.
+2. Access the available study features.
+3. Upload a supported PDF when using the document workflow.
+4. Ask questions through the AI-assisted study interface.
+5. Explore the available quiz functionality.
 
-### 1. Student authentication interface
+AI-generated responses should be checked against reliable academic sources.
 
--   Login and sign-up flows.
--   Server-side routes for login and account registration.
--   Form-based interaction through the web interface.
+🌐 Live Application
 
-### 2. PDF study-material upload
+Try the project here:
 
--   Upload PDF files through the application.
--   Extract text from supported PDFs for further processing.
--   Validate basic upload requirements, including file type and
-    size/page-related restrictions implemented by the application.
--   Scanned/image-only PDFs may not work when they contain no
-    extractable text; OCR is a potential future enhancement.
+https://mewar-campus-iq.onrender.com
 
-### 3. AI-assisted study chat
+The application is a deployed prototype. Availability and certain features may depend on hosting, database connectivity, and AI-provider limits.
 
--   Ask questions and receive AI-generated explanations.
--   Intended to help students understand concepts and study material.
--   The AI response depends on the configured Gemini API model,
-    credentials, quota, and provider availability.
--   AI-generated answers should be checked against course material and
-    trusted sources.
+💻 Run Locally
 
-### 4. Quiz practice
+1. Clone the repository
 
--   Quiz-related routes support quiz interaction and answer submission.
--   The application includes a quiz submission API.
--   The exact question-generation and quiz experience may depend on the
-    current implementation and configuration.
+git clone https://github.com/MDSalman22415/mewar-campus-iq.git
+cd mewar-campus-iq
 
-### 5. Student-facing web interface
+2. Create a virtual environment
 
--   HTML templates with CSS and JavaScript assets.
--   Separate styling files for authentication and other application
-    views.
--   Static assets are served by Flask.
--   Asset paths use lowercase `static/css/` and `static/js/` paths to
-    support case-sensitive deployment environments.
+python -m venv venv
 
-### 6. Database connectivity
+Activate it on Windows:
 
--   Configured to connect to a PostgreSQL database through Supabase.
--   Database availability depends on correct environment variables and
-    the database provider.
--   Never commit database passwords, API keys, or other private
-    credentials to the repository.
+.\venv\Scripts\Activate.ps1
 
-### 7. Public deployment
+On macOS/Linux:
 
--   Hosted on Render.
--   A Docker-based deployment configuration is included in the project.
--   The live app can be accessed at
-    https://mewar-campus-iq.onrender.com.
+source venv/bin/activate
 
-------------------------------------------------------------------------
+3. Install dependencies
 
-## User Workflow
+pip install -r requirements.txt
 
-A typical intended workflow is:
+4. Configure environment variables
 
-1.  Open the [live application](https://mewar-campus-iq.onrender.com).
-2.  Use the login or sign-up interface.
-3.  Open the relevant study feature.
-4.  Upload a supported PDF if using the upload workflow.
-5.  Ask a study question or use available quiz functionality.
-6.  Review the response and verify important information against the
-    original study material.
+Configure the API key and database settings required by the application. Use the variable names expected by the source code.
 
-The precise screens and available actions reflect the current deployed
-version.
+Never commit API keys, passwords, database credentials, or ".env" files.
 
-## Technology Stack
+5. Run the application
 
-  -----------------------------------------------------------------------
-  Layer                   Technology              Purpose
-  ----------------------- ----------------------- -----------------------
-  Backend                 Python, Flask           Web server, routing,
-                                                  request handling
+python app.py
 
-  Frontend                HTML, CSS, JavaScript   Pages, styling, and
-                                                  browser interactions
+Open the local URL shown in the terminal.
 
-  AI integration          Google Gemini API       AI-assisted answers and
-                                                  learning interactions
+🔐 Security Notes
 
-  PDF processing          PyMuPDF (`fitz`) and/or PDF text extraction and
-                          `pypdf`                 upload processing
+- Keep API keys and database credentials private.
+- Use environment variables for sensitive configuration.
+- Avoid uploading personal or confidential student information.
+- Verify AI-generated explanations before relying on them academically.
 
-  Database                PostgreSQL via Supabase Persistent data storage
-                                                  / database connectivity
+🚀 Future Improvements
 
-  Hosting                 Render                  Public web deployment
+Potential improvements for future versions include:
 
-  Containerization        Docker                  Reproducible
-                                                  application packaging
-                                                  and deployment
+- Better personalization of study resources.
+- Improved quiz generation and progress tracking.
+- OCR support for scanned PDFs.
+- Enhanced student dashboards.
+- More campus-focused learning tools.
+- Improved accessibility and multilingual support.
 
-  Version control         Git and GitHub          Source control and
-                                                  collaboration
-  -----------------------------------------------------------------------
+These are possible future enhancements, not claims about features already implemented.
 
-> Dependencies and exact versions are defined in the repository's
-> dependency files. Check those files for the authoritative list of
-> installed packages.
+👥 Team & Acknowledgements
 
-## Architecture
+Developed as a student innovation project for the MU Hackathon 2026 — The Smart Campus theme at Mewar University.
 
-At a high level, the application follows this request flow:
+Project leadership and community initiative: Sujit Kumar
+Community: Mewar Innovators Hub
 
-``` text
-Student's browser
-       |
-       | HTTP request / form submission
-       v
-Flask application (app.py)
-       |
-       +------> HTML templates
-       |           |
-       |           +---- CSS and JavaScript static assets
-       |
-       +------> PDF text extraction
-       |
-       +------> Gemini API (AI requests)
-       |
-       +------> Supabase PostgreSQL (database connection)
-       |
-       v
-HTTP response rendered in the browser
-```
+The project was built collaboratively. Contributors and their specific responsibilities should be credited according to their actual contributions.
 
-The browser communicates with Flask routes. Flask renders templates or
-returns API responses, and the relevant backend feature communicates
-with the configured external service when required.
+🏆 Vision
 
-## Project Structure
+At Mewar Innovators Hub, we believe every student deserves an environment where ideas can grow into practical solutions.
 
-The repository contains the following key paths. The exact contents may
-evolve as features are added.
+Mewar Campus IQ represents the spirit of student innovation, collaboration, and technology-driven learning.
 
-``` text
-mewar-campus-iq/
-├── app.py                  # Flask application and routes
-├── config.py               # Application configuration (if used)
-├── pdf_reader.py           # PDF-reading / text-extraction utility
-├── requirements.txt        # Python dependencies
-├── Dockerfile              # Container build instructions
-├── .dockerignore           # Files excluded from Docker build context
-├── .env.example            # Example environment configuration, if present
-├── .gitignore              # Files excluded from Git
-├── campus_iq/              # Application package / supporting code
-├── data/                   # Local data files, if used
-├── docs/                   # Project documentation
-├── instance/               # Instance-specific application files, if used
-├── static/
-│   ├── css/                # Stylesheets
-│   ├── js/                 # Browser-side JavaScript
-│   └── images/             # Images and visual assets
-├── templates/              # Flask/Jinja HTML templates
-├── tests/                  # Tests
-└── uploads/                # Local upload directory, if used
-```
+Mewar Innovators Hub
+Building for the Isolated Builders.
 
-Some folders may be empty or used only by particular development
-workflows. For the definitive current structure, inspect the repository
-itself.
+📄 License
 
-## How It Works
-
-### Flask routes
-
-The Flask application defines routes for pages and application
-functionality. Routes identified in the current implementation include:
-
--   `/login` --- login page and login handling.
--   `/signup` --- registration page and sign-up handling.
--   `/topic-quiz` --- quiz-related page.
--   `/api/quiz/generate` --- quiz-related API route.
--   `/api/quiz/submit` --- quiz answer submission.
--   `/api/ask` --- AI question-answering request.
--   `/api/pdf/upload` --- PDF upload and processing.
--   `/api/health` --- health-check endpoint.
-
-Routes may require authentication or particular request formats. Refer
-to `app.py` for the current implementation and validation logic.
-
-### PDF processing
-
-The PDF upload flow accepts PDF documents and extracts machine-readable
+A license has not been specified here. Add a license only after confirming the project's ownership and the team's permission to publish the code under that license.F upload flow accepts PDF documents and extracts machine-readable
 text. The current implementation includes validation for PDF uploads and
 may reject unsupported, encrypted, oversized, or text-empty documents.
 
